@@ -34,6 +34,18 @@ import ind5 from "../assets/projects/industrial/Image-empty-state (4).avif";
 
 const detailImages = import.meta.glob<string>('../assets/projects/hospital/**/*.png', { eager: true, as: 'url' });
 
+interface Project {
+    id: string;
+    name: string;
+    image: string;
+    category: string;
+    location?: string;
+    year?: string;
+    description?: string;
+    details?: string[];
+    folderName?: string;
+}
+
 const getProjectDetails = (folderName?: string): string[] => {
     if (!folderName) return [];
     return Object.entries(detailImages)
