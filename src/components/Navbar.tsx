@@ -56,12 +56,18 @@ export const Navbar = () => {
                     <nav className="hidden lg:flex items-center gap-8">
                         {navLinks.slice(0, 4).map((link) => (
                             <div key={link.name} className="relative group p-2 -m-2">
-                                <a
-                                    href={link.scroll}
-                                    className="text-[10px] uppercase tracking-architectural hover:opacity-50 transition-opacity"
-                                >
-                                    {link.name}
-                                </a>
+                                {link.subLinks ? (
+                                    <span className="text-[10px] uppercase tracking-architectural cursor-default opacity-100 italic transition-all">
+                                        {link.name}
+                                    </span>
+                                ) : (
+                                    <a
+                                        href={link.scroll}
+                                        className="text-[10px] uppercase tracking-architectural hover:opacity-50 transition-opacity"
+                                    >
+                                        {link.name}
+                                    </a>
+                                )}
 
                                 {/* Dropdown Menu for Sub-links */}
                                 {link.subLinks && (
@@ -117,13 +123,19 @@ export const Navbar = () => {
                                     transition={{ delay: 0.1 * i + 0.3 }}
                                     className="group relative flex flex-col items-start"
                                 >
-                                    <a
-                                        href={link.scroll}
-                                        onClick={() => setMenuOpen(false)}
-                                        className="text-5xl md:text-7xl font-extralight tracking-tighter hover:italic transition-all inline-block lowercase"
-                                    >
-                                        {link.name}
-                                    </a>
+                                    {link.subLinks ? (
+                                        <span className="text-5xl md:text-7xl font-extralight tracking-tighter transition-all inline-block lowercase cursor-default italic">
+                                            {link.name}
+                                        </span>
+                                    ) : (
+                                        <a
+                                            href={link.scroll}
+                                            onClick={() => setMenuOpen(false)}
+                                            className="text-5xl md:text-7xl font-extralight tracking-tighter hover:italic transition-all inline-block lowercase"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    )}
 
                                     {/* SubLinks Hierarchy - Fade & Slide in to the Right with Framer Motion */}
                                     {link.subLinks && (
