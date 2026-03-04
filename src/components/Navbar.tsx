@@ -51,7 +51,7 @@ export const Navbar = () => {
                         }}
                         className="text-xl font-light tracking-architectural uppercase cursor-pointer hover:opacity-70 transition-opacity select-none"
                     >
-                        Kay Design Studio
+                        Kay Design Studio —
                     </div>
                     <nav className="hidden lg:flex items-center gap-8">
                         {navLinks.slice(0, 4).map((link) => (
