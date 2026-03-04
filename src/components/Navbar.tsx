@@ -36,16 +36,15 @@ export const Navbar = () => {
                     }`}
             >
                 <div className="flex items-center gap-12">
-                    <Link
-                        to="/"
+                    <button
                         onClick={() => {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                             setMenuOpen(false);
                         }}
-                        className="text-xl font-light tracking-architectural uppercase"
+                        className="text-xl font-light tracking-architectural uppercase cursor-pointer hover:opacity-70 transition-opacity"
                     >
                         Kay Design Studio
-                    </Link>
+                    </button>
                     <nav className="hidden lg:flex items-center gap-8">
                         {navLinks.slice(0, 4).map((link) => (
                             <div key={link.name} className="relative group p-2 -m-2">
