@@ -21,7 +21,7 @@ const services = [
 
 export const Services = () => {
     return (
-        <section id="services" className="py-48 px-8 md:px-24 bg-white border-b border-black/5">
+        <section className="h-full bg-muted/30 py-12 md:py-0 px-8 md:px-24 overflow-hidden relative flex flex-col justify-center">
             <div className="max-w-screen-2xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-24 items-end mb-40">
                     <motion.h2

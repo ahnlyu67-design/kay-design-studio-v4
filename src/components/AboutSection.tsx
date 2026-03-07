@@ -6,7 +6,7 @@ import philosophyBg from "../assets/about/philosophy-bg.jpg";
 
 export const AboutSection = () => {
     return (
-        <section id="about" className="py-48 px-8 md:px-24 bg-white overflow-hidden relative">
+        <section className="h-full px-8 md:px-24 bg-white overflow-hidden relative flex items-center">
             {/* Background for Philosophy section */}
             <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none opacity-[0.03] grayscale transition-opacity duration-1000">
                 <img
@@ -77,7 +77,7 @@ export const AboutSection = () => {
                         </div>
 
                         <motion.div
-                            className="lg:col-span-7 aspect-[5/4] bg-muted overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+                            className="lg:col-span-7 aspect-[3/4] md:aspect-[5/4] bg-muted overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
                             initial={{ opacity: 0, scale: 1.05 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}

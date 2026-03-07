@@ -8,16 +8,11 @@ import { Footer } from "../components/Footer";
 
 const Index = () => {
     return (
-        <div className="min-h-screen bg-background text-foreground font-sans selection:bg-stone-200">
+        <div className="h-screen bg-background text-foreground font-sans selection:bg-stone-200 overflow-hidden">
             <Navbar />
-            <main>
+            <main className="h-screen overflow-hidden">
                 <HeroCarousel />
-                <AboutSection />
-                <Services />
-                <Projects />
-                <Contact />
             </main>
-            <Footer />
         </div>
     );
 };

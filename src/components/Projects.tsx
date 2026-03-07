@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Instagram } from "lucide-react";
 import { useState, useMemo } from "react";
 import { ProjectModal } from "./ProjectModal";
 
@@ -60,15 +60,15 @@ const categoriesData = [
         description: "EXPERIENCE THE ART OF LUXURY",
         topImage: hospTop,
         projects: [
-            { id: "h1", category: "Hospitality", name: "PJ Showroom", image: hospFeat1, folderName: "1,2025_Malone_PJ_Showroom" },
-            { id: "h2", category: "Hospitality", name: "LeahA Bradford", image: hospFeat2, folderName: "2,2023_LeahA_Bradford" },
-            { id: "h3", category: "Hospitality", name: "Jinya Ramen Bar", image: hospFeat3, folderName: "3,Jinya_Ramen_Bar_Alpharetta_GA" },
-            { id: "h4", category: "Hospitality", name: "1010 Midtown Lobby", image: hosp4, folderName: "1010_Midtown_Lobby_Atlanta_Georgia" },
-            { id: "h5", category: "Hospitality", name: "Pit Stop Convenience Store", image: hosp5, folderName: "Pit_Stop_Convenience_Store_SugarHill_GA" },
-            { id: "h6", category: "Hospitality", name: "White Windmill Bakery Cafe", image: hosp6, folderName: "White_Windmill_Bakery_Cafe_Sugarloaf_GA" },
-            { id: "h7", category: "Hospitality", name: "Yuki Restaurant", image: hosp7, folderName: "Yuki_Restaurant_Duluth_GA" },
-            { id: "h8", category: "Hospitality", name: "Anjoo Korean BarBQ", image: hosp8, folderName: "Anjoo_Korean_Barbq_Suwanee_GA" },
-            { id: "h9", category: "Hospitality", name: "Illy Cafe", image: hospIlly, folderName: "2023_Illy_Cafe" },
+            { id: "h1", category: "Hospitality", name: "White Windmill\nSugarloaf GA", image: hosp6, folderName: "White_Windmill_Bakery_Cafe_Sugarloaf_GA" },
+            { id: "h2", category: "Hospitality", name: "PJ Showroom\nAtlanta GA", image: hospFeat1, folderName: "1,2025_Malone_PJ_Showroom" },
+            { id: "h3", category: "Hospitality", name: "Jinya Ramen Bar\nAlpharetta GA", image: hospFeat3, folderName: "3,Jinya_Ramen_Bar_Alpharetta_GA" },
+            { id: "h4", category: "Hospitality", name: "1010 Midtown Lobby\nAtlanta GA", image: hosp4, folderName: "1010_Midtown_Lobby_Atlanta_Georgia" },
+            { id: "h5", category: "Hospitality", name: "Pit Stop\nSugar Hill GA", image: hosp5, folderName: "Pit_Stop_Convenience_Store_SugarHill_GA" },
+            { id: "h6", category: "Hospitality", name: "Yuki Restaurant\nDuluth GA", image: hosp7, folderName: "Yuki_Restaurant_Duluth_GA" },
+            { id: "h7", category: "Hospitality", name: "Anjoo Korean BarBQ\nSuwanee GA", image: hosp8, folderName: "Anjoo_Korean_Barbq_Suwanee_GA" },
+            { id: "h8", category: "Hospitality", name: "Illy Cafe\nAtlanta GA", image: hospIlly, folderName: "2023_Illy_Cafe" },
+            { id: "h9", category: "Hospitality", name: "LeahA Bradford\nDuluth GA", image: hospFeat2, folderName: "2,2023_LeahA_Bradford" },
         ]
     },
     {
@@ -77,17 +77,17 @@ const categoriesData = [
         description: "BESPOKE CABINET TAILORED TO YOUR LIFESTYLE",
         topImage: resTop,
         projects: [
-            { id: "r1", category: "Residential", name: "Geter Residence", image: resFeat1, folderName: "1,2024_Geter" },
-            { id: "r2", category: "Residential", name: "Lenox Dr Residence", image: resFeat2, folderName: "2,Lenox_Dr_Residence_Atlanta_GA" },
-            { id: "r3", category: "Residential", name: "Gary Cooper Residence", image: resFeat3, folderName: "3,2023_Gary_Cooper" },
-            { id: "r4", category: "Residential", name: "Meister Residence", image: resDM1, folderName: "Mr_and_Mrs_Meister_Residence_Duluth_GA" },
-            { id: "r5", category: "Residential", name: "Miller Residence", image: resDM2, folderName: "Mr_and_Mrs_Miller_Residence_Atlanta_GA" },
-            { id: "r6", category: "Residential", name: "Sugarloaf Country Club", image: res4, folderName: "Sugarloaf_Country_Club_Duluth_GA" },
-            { id: "r7", category: "Residential", name: "The Manor Country Club", image: res5, folderName: "The_Manor_Country_Club_Milton_GA" },
-            { id: "r8", category: "Residential", name: "The River Club", image: res6, folderName: "The_River_Club_Residence_Suwanee_GA" },
-            { id: "r9", category: "Residential", name: "Waldorf Astoria Hotel", image: res7, folderName: "Waldorf_Astoria_Hotel_Atlanta_GA" },
-            { id: "r10", category: "Residential", name: "Waldorf Astoria Penthouse", image: res8, folderName: "Waldorf_Astoria_Penthouse_Atlanta_GA" },
-            { id: "r11", category: "Residential", name: "KMS Vaughn Imbornone", image: resDM3, folderName: "2023_KMS_Vaughn_Imbornone" },
+            { id: "r5", category: "Residential", name: "Private Residence\nAtlanta GA", image: resDM2, folderName: "Mr_and_Mrs_Miller_Residence_Atlanta_GA" },
+            { id: "r2", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat1, folderName: "1,2024_Geter" },
+            { id: "r3", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat3, folderName: "3,2023_Gary_Cooper" },
+            { id: "r4", category: "Residential", name: "Private Residence\nDuluth GA", image: resDM1, folderName: "Mr_and_Mrs_Meister_Residence_Duluth_GA" },
+            { id: "r1", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat2, folderName: "2,Lenox_Dr_Residence_Atlanta_GA" },
+            { id: "r6", category: "Residential", name: "Private Residence\nDuluth GA", image: res4, folderName: "Sugarloaf_Country_Club_Duluth_GA" },
+            { id: "r7", category: "Residential", name: "Private Residence\nMilton GA", image: res5, folderName: "The_Manor_Country_Club_Milton_GA" },
+            { id: "r8", category: "Residential", name: "Private Residence\nSuwanee GA", image: res6, folderName: "The_River_Club_Residence_Suwanee_GA" },
+            { id: "r9", category: "Residential", name: "Private Residence\nAtlanta GA", image: res7, folderName: "Waldorf_Astoria_Hotel_Atlanta_GA" },
+            { id: "r10", category: "Residential", name: "Private Residence\nAtlanta GA", image: res8, folderName: "Waldorf_Astoria_Penthouse_Atlanta_GA" },
+            { id: "r11", category: "Residential", name: "Private Residence\nAtlanta GA", image: resDM3, folderName: "2023_KMS_Vaughn_Imbornone" },
         ]
     },
     {
@@ -96,23 +96,27 @@ const categoriesData = [
         description: "crafting industry excellence",
         topImage: indTop,
         projects: [
-            { id: "i1", category: "Industrial", name: "HMGMA Lobby", image: indFeat1, folderName: "1,2024_HMGMA_Lobby" },
-            { id: "i2", category: "Industrial", name: "Atlanta Classic Cars", image: indFeat2, folderName: "2,Atlanta_Classic_Cars_Duluth_GA" },
-            { id: "i3", category: "Industrial", name: "KIA Souvenir Shop", image: indFeat3, folderName: "3,KIA_Souvenir_Shop_Lobby_West_Point_GA" },
-            { id: "i4", category: "Industrial", name: "Hyundai PowerTech", image: indDM1, folderName: "Hyundai_PowerTech_West_Point_GA" },
-            { id: "i5", category: "Industrial", name: "KIA Paint Shop", image: indDM2, folderName: "KIA_Paint_West_Point_GA" },
-            { id: "i6", category: "Industrial", name: "LS Cable Showroom", image: indDM3, folderName: "LS_Cable_System_USA_Showroom_Sandy_Spring_GA" },
-            { id: "i7", category: "Industrial", name: "Viasat", image: indDM4, folderName: "Viasat_Duluth_GA" },
-            { id: "i8", category: "Industrial", name: "Illy Ford Factory", image: indDM5, folderName: "2024_Illy_Ford_Factory" },
+            { id: "i1", category: "Industrial", name: "Hyundai PowerTech\nWest Point GA", image: indDM1, folderName: "Hyundai_PowerTech_West_Point_GA" },
+            { id: "i2", category: "Industrial", name: "HMGMA Lobby\nSavannah GA", image: indFeat1, folderName: "1,2024_HMGMA_Lobby" },
+            { id: "i3", category: "Industrial", name: "LS Cable Showroom\nSandy Spring GA", image: indDM3, folderName: "LS_Cable_System_USA_Showroom_Sandy_Spring_GA" },
+            { id: "i4", category: "Industrial", name: "KIA Souvenir Shop\nWest Point GA", image: indFeat3, folderName: "3,KIA_Souvenir_Shop_Lobby_West_Point_GA" },
+            { id: "i5", category: "Industrial", name: "KIA Paint Shop\nWest Point GA", image: indDM2, folderName: "KIA_Paint_West_Point_GA" },
+            { id: "i6", category: "Industrial", name: "Atlanta Classic Cars\nDuluth GA", image: indFeat2, folderName: "2,Atlanta_Classic_Cars_Duluth_GA" },
+            { id: "i7", category: "Industrial", name: "Viasat\nDuluth GA", image: indDM4, folderName: "Viasat_Duluth_GA" },
+            { id: "i8", category: "Industrial", name: "Illy Ford Factory\nAtlanta GA", image: indDM5, folderName: "2024_Illy_Ford_Factory" },
         ]
     }
 ];
 
-export const Projects = () => {
+export const Projects = ({ categoryFilter }: { categoryFilter?: string }) => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const processedCategories = useMemo(() => {
-        const processed = categoriesData.map(cat => ({
+    const filteredCategories = useMemo(() => {
+        let cats = categoriesData;
+        if (categoryFilter) {
+            cats = categoriesData.filter(cat => cat.id === categoryFilter);
+        }
+        const processed = cats.map(cat => ({
             ...cat,
             projects: cat.projects.map(project => {
                 const safeCategoryPath = cat.id === "hospitality" ? "hospital" : cat.id;
@@ -134,17 +138,17 @@ export const Projects = () => {
         }));
 
         return processed;
-    }, []);
+    }, [categoryFilter]);
 
     return (
         <section id="projects" className="bg-stone-50">
-            {processedCategories.map((cat) => (
+            {filteredCategories.map((cat) => (
                 <div
                     key={cat.id}
                     id={cat.id}
-                    className="min-h-screen flex flex-col justify-center px-8 md:px-24 py-32 border-b border-black/5 last:border-0"
+                    className="min-h-screen flex flex-col justify-between px-8 md:px-24 pt-32 pb-12 border-b border-black/5 last:border-0 scroll-mt-20"
                 >
-                    <div className="max-w-screen-2xl mx-auto w-full">
+                    <div className="max-w-screen-2xl mx-auto w-full flex-grow">
 
                         {/* 1. Category Hero (Era Header) */}
                         <motion.div
@@ -156,7 +160,7 @@ export const Projects = () => {
                         >
                             <p className="text-architectural text-black/80 text-xl mb-8 uppercase tracking-[0.2em]">{cat.title}</p>
                             {cat.topImage && (
-                                <div className="relative w-full aspect-[21/9] mb-12 overflow-hidden flex items-center justify-center group">
+                                <div className="relative w-full aspect-[4/3] md:aspect-[21/9] mb-12 overflow-hidden flex items-center justify-center group">
                                     <img
                                         src={cat.topImage}
                                         className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1500ms]"
@@ -179,7 +183,7 @@ export const Projects = () => {
                                     transition={{ duration: 0.8, delay: idx * 0.1 }}
                                     viewport={{ once: true }}
                                     onClick={() => setSelectedProject(project)}
-                                    className="group aspect-[4/5] relative bg-white border border-black/5 flex flex-col justify-between hover:bg-black transition-all duration-700 cursor-pointer overflow-hidden"
+                                    className="group aspect-[3/4] md:aspect-[4/5] relative bg-white border border-black/5 flex flex-col justify-between hover:bg-black transition-all duration-700 cursor-pointer overflow-hidden"
                                 >
                                     <img
                                         src={project.image}
@@ -188,9 +192,11 @@ export const Projects = () => {
                                     />
                                     <div className="relative z-10 p-12 h-full flex flex-col justify-between">
                                         <span className="text-[10px] text-black group-hover:text-white opacity-30 font-mono">0{idx + 1}</span>
-                                        <h4 className="text-3xl font-light uppercase italic group-hover:not-italic text-black group-hover:text-white transition-all tracking-tighter">
-                                            {project.name}
-                                        </h4>
+                                        {cat.id !== "residential" && (
+                                            <h4 className="text-3xl font-light uppercase italic group-hover:not-italic text-black group-hover:text-white transition-all tracking-tighter whitespace-pre-line">
+                                                {project.name}
+                                            </h4>
+                                        )}
                                     </div>
                                     <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/20 to-transparent group-hover:from-black/40 transition-all duration-700" />
                                 </motion.div>
@@ -224,15 +230,34 @@ export const Projects = () => {
                                             />
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                                             <div className="relative z-10 p-6 flex items-end h-full">
-                                                <p className="text-xs font-light tracking-[0.2em] uppercase text-black group-hover:italic transition-all">
-                                                    {project.name}
-                                                </p>
+                                                {cat.id !== "residential" && (
+                                                    <p className="text-xs font-light tracking-[0.2em] uppercase text-black group-hover:italic transition-all whitespace-pre-line">
+                                                        {project.name}
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </motion.div>
                         )}
+                    </div>
+
+                    {/* Section Footer */}
+                    <div className="max-w-screen-2xl mx-auto w-full mt-24 pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div className="flex items-center gap-6">
+                            <a
+                                href="https://www.instagram.com/kay_design_studio/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-50 transition-all"
+                            >
+                                <Instagram className="w-6 h-6 stroke-1 text-black" />
+                            </a>
+                        </div>
+                        <p className="text-[10px] uppercase tracking-architectural text-black/30">
+                            © 2026 Kay Design Studio. All Rights Reserved.
+                        </p>
                     </div>
                 </div>
             ))}
@@ -241,7 +266,7 @@ export const Projects = () => {
                 {selectedProject && (
                     <ProjectModal
                         project={selectedProject}
-                        allProjects={processedCategories.flatMap(c => c.projects)}
+                        allProjects={filteredCategories.flatMap(c => c.projects)}
                         onClose={() => setSelectedProject(null)}
                     />
                 )}

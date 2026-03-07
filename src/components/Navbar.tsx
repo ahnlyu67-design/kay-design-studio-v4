@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, Instagram } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 20);
@@ -13,32 +15,32 @@ export const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: "About", scroll: "#about" },
-        { name: "Services", scroll: "#services" },
+        { name: "About", path: "/about" },
+        { name: "Services", path: "/services" },
         {
             name: "Projects",
-            scroll: "#projects",
+            path: "/projects",
             subLinks: [
-                { name: "Hospitality", scroll: "#hospitality", desc: "EXPERIENCE THE ART OF LUXURY" },
-                { name: "Residential", scroll: "#residential", desc: "BESPOKE CABINET TAILORED TO YOUR LIFESTYLE" },
-                { name: "Industrial", scroll: "#industrial", desc: "crafting industry excellence" },
+                { name: "Hospitality", path: "/projects/hospitality", desc: "EXPERIENCE THE ART OF LUXURY" },
+                { name: "Residential", path: "/projects/residential", desc: "BESPOKE CABINET TAILORED TO YOUR LIFESTYLE" },
+                { name: "Industrial", path: "/projects/industrial", desc: "crafting industry excellence" },
             ]
         },
-        { name: "Contact", scroll: "#contact" },
+        { name: "Contact", path: "/contact" },
     ];
 
     return (
         <>
             <header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-8 h-20 flex items-center justify-between ${scrolled || menuOpen ? "bg-white text-black" : "text-white"
-                    }`}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-8 h-20 flex items-center justify-between bg-white text-black shadow-sm`}
             >
                 <div className="flex items-center gap-12">
                     <div
                         role="button"
                         tabIndex={0}
                         onClick={() => {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            navigate("/");
+                            window.scrollTo(0, 0);
                             setMenuOpen(false);
                         }}
                         className="text-xl font-light tracking-architectural uppercase cursor-pointer hover:opacity-70 transition-opacity select-none"
@@ -55,12 +57,12 @@ export const Navbar = () => {
                                         {link.name}
                                     </span>
                                 ) : (
-                                    <a
-                                        href={link.scroll}
+                                    <Link
+                                        to={link.path}
                                         className="text-[10px] uppercase tracking-architectural hover:opacity-50 transition-opacity"
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 )}
 
                                 {/* Dropdown Menu (Glassmorphism) */}
@@ -71,9 +73,9 @@ export const Navbar = () => {
 
                                             <div className="relative z-10 flex flex-col gap-6">
                                                 {link.subLinks.map(sub => (
-                                                    <a
+                                                    <Link
                                                         key={sub.name}
-                                                        href={sub.scroll}
+                                                        to={sub.path}
                                                         className="group/sub flex items-center justify-between transition-all"
                                                     >
                                                         <div className="flex items-baseline gap-4 w-full">
@@ -87,7 +89,7 @@ export const Navbar = () => {
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -137,26 +139,32 @@ export const Navbar = () => {
                                             {link.name}
                                         </span>
                                     ) : (
-                                        <a
-                                            href={link.scroll}
-                                            onClick={() => setMenuOpen(false)}
+                                        <Link
+                                            to={link.path}
+                                            onClick={() => {
+                                                setMenuOpen(false);
+                                                window.scrollTo(0, 0);
+                                            }}
                                             className="text-5xl md:text-7xl font-extralight tracking-tighter hover:italic transition-all inline-block lowercase"
                                         >
                                             {link.name}
-                                        </a>
+                                        </Link>
                                     )}
 
                                     {link.subLinks && (
-                                        <div className="flex flex-col gap-2 md:gap-4 opacity-0 group-hover:opacity-100 translate-x-[-30px] group-hover:translate-x-0 transition-all duration-[800ms] ease-out mt-4 md:mt-0 md:absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-12 pointer-events-none group-hover:pointer-events-auto">
+                                        <div className="flex flex-col gap-2 md:gap-4 mt-4 md:mt-0 md:absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:pl-12 opacity-100 md:opacity-0 md:group-hover:opacity-100 pointer-events-auto md:pointer-events-none md:group-hover:pointer-events-auto transition-all duration-500">
                                             {link.subLinks.map((sub) => (
-                                                <a
+                                                <Link
                                                     key={sub.name}
-                                                    href={sub.scroll}
-                                                    onClick={() => setMenuOpen(false)}
+                                                    to={sub.path}
+                                                    onClick={() => {
+                                                        setMenuOpen(false);
+                                                        window.scrollTo(0, 0);
+                                                    }}
                                                     className="text-2xl md:text-3xl font-extralight text-black/30 hover:text-black hover:italic transition-all lowercase whitespace-nowrap"
                                                 >
                                                     {sub.name}
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     )}
@@ -175,6 +183,17 @@ export const Navbar = () => {
                                 <p className="text-architectural text-black/40">Inquiries</p>
                                 <a href="mailto:info@kaydesignstudio.com" className="text-sm font-light hover:underline underline-offset-4">
                                     info@kaydesignstudio.com
+                                </a>
+                            </div>
+                            <div className="pt-8 border-t border-black/5">
+                                <a
+                                    href="https://www.instagram.com/kay_design_studio/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-black hover:opacity-50 transition-all"
+                                >
+                                    <Instagram className="w-6 h-6 stroke-1" />
+                                    <span className="text-[10px] uppercase tracking-architectural">Instagram</span>
                                 </a>
                             </div>
                         </div>

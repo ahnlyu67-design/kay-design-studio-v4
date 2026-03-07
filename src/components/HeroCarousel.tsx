@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Instagram } from "lucide-react";
 import heroImage1 from "../assets/hero/1.avif";
 import heroImage2 from "../assets/hero/2.avif";
-import heroImage3 from "../assets/hero/3.avif";
+import heroImage3 from "../assets/hero/3.png";
+import heroImage4 from "../assets/hero/4.jpg";
 
 const slides = [
     {
@@ -23,6 +25,12 @@ const slides = [
         title: "Bespoke environments\ntailored to your lifestyle",
         description: "Creating spaces that harmonize form and function with timeless elegance.",
     },
+    {
+        image: heroImage4,
+        label: "Phillip Jeffries",
+        title: "Phillip Jeffries Showroom",
+        description: "Innovative wallcoverings and textiles for premium interior designs.",
+    },
 ];
 
 export const HeroCarousel = () => {
@@ -36,7 +44,7 @@ export const HeroCarousel = () => {
     }, [next]);
 
     return (
-        <section id="top" className="relative h-screen w-full bg-black overflow-hidden select-none">
+        <section className="relative h-screen w-full bg-black overflow-hidden select-none">
             <AnimatePresence>
                 <motion.div
                     key={current}
@@ -65,7 +73,7 @@ export const HeroCarousel = () => {
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="absolute bottom-12 md:bottom-24 left-8 md:left-24 right-8 md:right-24 pointer-events-auto max-w-[90vw] lg:max-w-7xl"
                 >
-                    <h1 className="text-hero-heading text-white mb-6 md:mb-10 whitespace-pre-line lowercase leading-none tracking-tighter">
+                    <h1 className="text-hero-heading text-white mb-6 md:mb-10 whitespace-pre-line  leading-none tracking-tighter">
                         {["Let's", "Build", "Together."].map((line, i) => (
                             <span key={i} className="block overflow-hidden pb-4">
                                 <motion.span
@@ -115,6 +123,20 @@ export const HeroCarousel = () => {
                             }`}
                     />
                 ))}
+            </div>
+
+            <div className="absolute bottom-8 left-8 right-8 flex justify-between items-center z-20 pointer-events-auto">
+                <a
+                    href="https://www.instagram.com/kay_design_studio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/40 hover:text-white transition-colors"
+                >
+                    <Instagram className="w-5 h-5 stroke-1" />
+                </a>
+                <p className="text-[10px] uppercase tracking-architectural text-white/20">
+                    © 2026 Kay Design Studio
+                </p>
             </div>
         </section>
     );

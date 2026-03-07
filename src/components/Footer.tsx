@@ -1,3 +1,5 @@
+import { Instagram } from "lucide-react";
+
 export const Footer = () => {
     return (
         <footer id="contact" className="bg-white border-t border-black/5 pt-32 pb-12 px-8 md:px-24">
@@ -21,9 +23,9 @@ export const Footer = () => {
                     <div className="space-y-8">
                         <p className="text-architectural text-black/40">Connect</p>
                         <nav className="flex flex-col gap-4 text-xs font-light">
-                            <a href="#" className="hover:italic transition-all">Instagram</a>
-                            <a href="#" className="hover:italic transition-all">LinkedIn</a>
-                            <a href="#" className="hover:italic transition-all">Pinterest</a>
+                            <a href="https://www.instagram.com/kay_design_studio/" target="_blank" rel="noopener noreferrer" className="hover:opacity-50 transition-all">
+                                <Instagram className="w-5 h-5 stroke-1" />
+                            </a>
                         </nav>
                     </div>
 
@@ -39,12 +41,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-architectural text-black/30">
-                    <p>© {new Date().getFullYear()} Kay Design Studio. All Rights Reserved.</p>
-                    <div className="flex gap-12">
-                        <a href="#" className="hover:text-black transition-colors">Privacy</a>
-                        <a href="#" className="hover:text-black transition-colors">Cookies</a>
-                        <a href="#" className="hover:text-black transition-colors">Legal</a>
-                    </div>
+                    <p>© 2026 Kay Design Studio. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
