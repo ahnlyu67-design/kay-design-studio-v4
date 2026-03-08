@@ -74,19 +74,24 @@ export const AboutSection = () => {
                     </div>
 
                     {/* Image Slider - Right below "To me they are one." */}
-                    <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-muted overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
-                        <AnimatePresence mode="wait">
+                    <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-black overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                        <AnimatePresence initial={false}>
                             <motion.img
                                 key={currentIdx}
                                 src={slides[currentIdx]}
                                 alt={`Project ${currentIdx + 1}`}
-                                initial={{ opacity: 0, scale: 1.05 }}
+                                initial={{ opacity: 0, scale: 1.1 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-                                className="absolute inset-0 w-full h-full object-cover brightness-90"
+                                exit={{ opacity: 0 }}
+                                transition={{
+                                    opacity: { duration: 1.5, ease: "easeInOut" },
+                                    scale: { duration: 3, ease: [0.16, 1, 0.3, 1] }
+                                }}
+                                className="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
                             />
                         </AnimatePresence>
+                        {/* Subtle overlay to soften the transition */}
+                        <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start w-full">
