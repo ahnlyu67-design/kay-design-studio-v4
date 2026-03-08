@@ -40,7 +40,6 @@ import indDM1 from "../assets/projects/industrial/Hyundai_PowerTech_West_Point_G
 import indDM2 from "../assets/projects/industrial/KIA_Paint_West_Point_GA/top.avif";
 import indDM3 from "../assets/projects/industrial/LS_Cable_System_USA_Showroom_Sandy_Spring_GA/top.avif";
 import indDM4 from "../assets/projects/industrial/Viasat_Duluth_GA/top.avif";
-import indDM5 from "../assets/projects/industrial/2024_Illy_Ford_Factory/top.jpg";
 
 const detailImages = import.meta.glob<string>('../assets/projects/**/*.{png,jpg,jpeg,avif,webp}', { eager: true, as: 'url' });
 
@@ -68,7 +67,6 @@ const categoriesData = [
             { id: "h6", category: "Hospitality", name: "Yuki Restaurant\nDuluth GA", image: hosp7, folderName: "Yuki_Restaurant_Duluth_GA" },
             { id: "h7", category: "Hospitality", name: "Anjoo Korean BarBQ\nSuwanee GA", image: hosp8, folderName: "Anjoo_Korean_Barbq_Suwanee_GA" },
             { id: "h8", category: "Hospitality", name: "Illy Cafe\nAtlanta GA", image: hospIlly, folderName: "2023_Illy_Cafe" },
-            { id: "h9", category: "Hospitality", name: "LeahA Bradford\nDuluth GA", image: hospFeat2, folderName: "2,2023_LeahA_Bradford" },
         ]
     },
     {
@@ -80,11 +78,11 @@ const categoriesData = [
             { id: "r5", category: "Residential", name: "Private Residence\nAtlanta GA", image: resDM2, folderName: "Mr_and_Mrs_Miller_Residence_Atlanta_GA" },
             { id: "r2", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat1, folderName: "1,2024_Geter" },
             { id: "r3", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat3, folderName: "3,2023_Gary_Cooper" },
+            { id: "r12", category: "Residential", name: "Private Residence\nAtlanta GA", image: hospFeat2, folderName: "2,2023_LeahA_Bradford" },
             { id: "r4", category: "Residential", name: "Private Residence\nDuluth GA", image: resDM1, folderName: "Mr_and_Mrs_Meister_Residence_Duluth_GA" },
             { id: "r1", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat2, folderName: "2,Lenox_Dr_Residence_Atlanta_GA" },
             { id: "r6", category: "Residential", name: "Private Residence\nDuluth GA", image: res4, folderName: "Sugarloaf_Country_Club_Duluth_GA" },
             { id: "r7", category: "Residential", name: "Private Residence\nMilton GA", image: res5, folderName: "The_Manor_Country_Club_Milton_GA" },
-            { id: "r8", category: "Residential", name: "Private Residence\nSuwanee GA", image: res6, folderName: "The_River_Club_Residence_Suwanee_GA" },
             { id: "r9", category: "Residential", name: "Private Residence\nAtlanta GA", image: res7, folderName: "Waldorf_Astoria_Hotel_Atlanta_GA" },
             { id: "r10", category: "Residential", name: "Private Residence\nAtlanta GA", image: res8, folderName: "Waldorf_Astoria_Penthouse_Atlanta_GA" },
             { id: "r11", category: "Residential", name: "Private Residence\nAtlanta GA", image: resDM3, folderName: "2023_KMS_Vaughn_Imbornone" },
@@ -103,7 +101,6 @@ const categoriesData = [
             { id: "i5", category: "Industrial", name: "KIA Paint Shop\nWest Point GA", image: indDM2, folderName: "KIA_Paint_West_Point_GA" },
             { id: "i6", category: "Industrial", name: "Atlanta Classic Cars\nDuluth GA", image: indFeat2, folderName: "2,Atlanta_Classic_Cars_Duluth_GA" },
             { id: "i7", category: "Industrial", name: "Viasat\nDuluth GA", image: indDM4, folderName: "Viasat_Duluth_GA" },
-            { id: "i8", category: "Industrial", name: "Illy Ford Factory\nAtlanta GA", image: indDM5, folderName: "2024_Illy_Ford_Factory" },
         ]
     }
 ];
