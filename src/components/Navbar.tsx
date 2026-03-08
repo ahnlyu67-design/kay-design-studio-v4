@@ -187,7 +187,7 @@ export const Navbar = () => {
                             </div>
                             <div className="pt-8 border-t border-black/5">
                                 <a
-                                    href="https://www.instagram.com/kay_design_studio/"
+                                    href="https://www.instagram.com/kaydesignstudio_/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 text-black hover:opacity-50 transition-all"

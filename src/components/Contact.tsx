@@ -24,20 +24,13 @@ export const Contact = () => {
                 <div className="relative z-10 max-w-screen-2xl mx-auto px-8 md:px-24 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                         <div className="space-y-6">
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 0.8 }}
-                                className="text-architectural text-white/40 text-sm uppercase tracking-widest"
-                            >
-                                Get in Touch
-                            </motion.p>
                             <motion.h3
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1 }}
-                                className="text-5xl md:text-7xl font-extralight tracking-tighter lowercase leading-[1.1]"
+                                className="text-6xl md:text-8xl lg:text-9xl font-extralight tracking-tighter lowercase leading-[0.9]"
                             >
-                                your life creates <span className="italic">your own space.</span>
+                                Get in <span className="italic">Touch.</span>
                             </motion.h3>
                         </div>
 

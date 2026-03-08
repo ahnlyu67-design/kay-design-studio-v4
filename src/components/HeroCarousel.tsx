@@ -127,7 +127,7 @@ export const HeroCarousel = () => {
 
             <div className="absolute bottom-6 left-8 right-8 flex justify-between items-center z-20 pointer-events-auto">
                 <a
-                    href="https://www.instagram.com/kay_design_studio/"
+                    href="https://www.instagram.com/kaydesignstudio_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/40 hover:text-white transition-colors"

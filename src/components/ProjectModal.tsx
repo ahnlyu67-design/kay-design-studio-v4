@@ -23,9 +23,7 @@ export const ProjectModal = ({ project: initialProject, allProjects, onClose }: 
     const [currentProject, setCurrentProject] = useState(initialProject);
     const [currentImg, setCurrentImg] = useState(0);
 
-    const allImages = currentProject.details && currentProject.details.length > 0
-        ? [currentProject.image, ...currentProject.details]
-        : [currentProject.image];
+    const allImages = Array.from(new Set([currentProject.image, ...(currentProject.details || [])]));
 
     const next = () => setCurrentImg((p) => (p + 1) % allImages.length);
     const prev = () => setCurrentImg((p) => (p - 1 + allImages.length) % allImages.length);
@@ -129,16 +127,16 @@ export const ProjectModal = ({ project: initialProject, allProjects, onClose }: 
 
                         {/* Navigation Arrows */}
                         {allImages.length > 1 && (
-                            <div className="absolute inset-0 flex items-center justify-between px-8 z-30 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-white">
+                            <div className="absolute inset-0 flex items-center justify-between px-8 z-30 pointer-events-none text-white">
                                 <button
                                     onClick={(e) => { e.stopPropagation(); prev(); }}
-                                    className="p-4 bg-black/10 hover:bg-black/60 backdrop-blur-sm transition-all pointer-events-auto rounded-full"
+                                    className="p-4 bg-black/20 hover:bg-black/60 backdrop-blur-sm transition-all pointer-events-auto rounded-full"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
                                 </button>
                                 <button
                                     onClick={(e) => { e.stopPropagation(); next(); }}
-                                    className="p-4 bg-black/10 hover:bg-black/60 backdrop-blur-sm transition-all pointer-events-auto rounded-full"
+                                    className="p-4 bg-black/20 hover:bg-black/60 backdrop-blur-sm transition-all pointer-events-auto rounded-full"
                                 >
                                     <ChevronRight className="w-6 h-6" />
                                 </button>

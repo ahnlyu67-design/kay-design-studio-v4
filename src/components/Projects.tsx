@@ -244,7 +244,7 @@ export const Projects = ({ categoryFilter }: { categoryFilter?: string }) => {
                     <div className="max-w-screen-2xl mx-auto w-full mt-24 pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
                         <div className="flex items-center gap-6">
                             <a
-                                href="https://www.instagram.com/kay_design_studio/"
+                                href="https://www.instagram.com/kaydesignstudio_/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:opacity-50 transition-all"

@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
         <footer id="contact" className="bg-white border-t border-black/5 pt-32 pb-12 px-8 md:px-24">
             <div className="max-w-screen-2xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mb-32">
                     <div className="lg:col-span-1">
                         <h3 className="text-architectural mb-12">Kay Design Studio</h3>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed max-w-[200px]">
@@ -21,20 +21,20 @@ export const Footer = () => {
                     </div>
 
                     <div className="space-y-8">
-                        <p className="text-architectural text-black/40">Connect</p>
-                        <nav className="flex flex-col gap-4 text-xs font-light">
-                            <a href="https://www.instagram.com/kay_design_studio/" target="_blank" rel="noopener noreferrer" className="hover:opacity-50 transition-all">
-                                <Instagram className="w-5 h-5 stroke-1" />
-                            </a>
-                        </nav>
-                    </div>
-
-                    <div className="space-y-8">
                         <p className="text-architectural text-black/40">Contact</p>
-                        <div className="text-xs font-light space-y-2">
+                        <div className="text-xs font-light space-y-4">
                             <p>770.559.3260</p>
                             <a href="mailto:info@kaydesignstudio.com" className="block hover:italic transition-all">
                                 info@kaydesignstudio.com
+                            </a>
+                            <a
+                                href="https://www.instagram.com/kaydesignstudio_/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-black hover:opacity-50 transition-all pt-4"
+                            >
+                                <Instagram className="w-5 h-5 stroke-1" />
+                                <span className="text-[10px] uppercase tracking-architectural">Instagram</span>
                             </a>
                         </div>
                     </div>
