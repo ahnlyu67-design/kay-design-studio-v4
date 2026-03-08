@@ -10,7 +10,6 @@ import indTop from "../assets/projects/industrial/top.png";
 
 // Hospitality Images
 import hospFeat1 from "../assets/projects/hospital/1,2025_Malone_PJ_Showroom/top.jpg";
-import hospFeat2 from "../assets/projects/hospital/2,2023_LeahA_Bradford/top.jpg";
 import hospFeat3 from "../assets/projects/hospital/3,Jinya_Ramen_Bar_Alpharetta_GA/top.avif";
 import hosp4 from "../assets/projects/hospital/1010_Midtown_Lobby_Atlanta_Georgia/top.avif";
 import hosp5 from "../assets/projects/hospital/Pit_Stop_Convenience_Store_SugarHill_GA/top.avif";
@@ -23,6 +22,7 @@ import hospIlly from "../assets/projects/hospital/2023_Illy_Cafe/top.png";
 import resFeat1 from "../assets/projects/residential/1,2024_Geter/top.jpg";
 import resFeat2 from "../assets/projects/residential/2,Lenox_Dr_Residence_Atlanta_GA/top.avif";
 import resFeat3 from "../assets/projects/residential/3,2023_Gary_Cooper/top.png";
+import resFeat4 from "../assets/projects/residential/2,2023_LeahA_Bradford/top.jpg";
 import res4 from "../assets/projects/residential/Sugarloaf_Country_Club_Duluth_GA/top.avif";
 import res5 from "../assets/projects/residential/The_Manor_Country_Club_Milton_GA/top.avif";
 import res6 from "../assets/projects/residential/The_River_Club_Residence_Suwanee_GA/top.avif";
@@ -78,7 +78,7 @@ const categoriesData = [
             { id: "r5", category: "Residential", name: "Private Residence\nAtlanta GA", image: resDM2, folderName: "Mr_and_Mrs_Miller_Residence_Atlanta_GA" },
             { id: "r2", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat1, folderName: "1,2024_Geter" },
             { id: "r3", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat3, folderName: "3,2023_Gary_Cooper" },
-            { id: "r12", category: "Residential", name: "Private Residence\nAtlanta GA", image: hospFeat2, folderName: "2,2023_LeahA_Bradford" },
+            { id: "r12", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat4, folderName: "2,2023_LeahA_Bradford" },
             { id: "r4", category: "Residential", name: "Private Residence\nDuluth GA", image: resDM1, folderName: "Mr_and_Mrs_Meister_Residence_Duluth_GA" },
             { id: "r1", category: "Residential", name: "Private Residence\nAtlanta GA", image: resFeat2, folderName: "2,Lenox_Dr_Residence_Atlanta_GA" },
             { id: "r6", category: "Residential", name: "Private Residence\nDuluth GA", image: res4, folderName: "Sugarloaf_Country_Club_Duluth_GA" },
