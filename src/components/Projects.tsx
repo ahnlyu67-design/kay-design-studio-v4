@@ -117,16 +117,13 @@ export const Projects = ({ categoryFilter }: { categoryFilter?: string }) => {
             ...cat,
             projects: cat.projects.map(project => {
                 const safeCategoryPath = cat.id === "hospitality" ? "hospital" : cat.id;
-                const expectedPathFragment = `/projects/${safeCategoryPath}/${project.folderName}/`.toLowerCase();
+                // Use a more relaxed path fragment to ensure matching across different build systems
+                const expectedPathFragment = `projects/${safeCategoryPath}/${project.folderName}/`.toLowerCase();
 
                 const images: string[] = Object.entries(detailImages)
                     .filter(([path]) => {
-                        try {
-                            const decodedPath = decodeURIComponent(path).toLowerCase();
-                            return decodedPath.includes(expectedPathFragment);
-                        } catch (e) {
-                            return path.toLowerCase().includes(expectedPathFragment);
-                        }
+                        const decodedPath = path.toLowerCase().replace(/\\/g, '/');
+                        return decodedPath.includes(expectedPathFragment);
                     })
                     .map(([_, moduleUrl]) => moduleUrl as string);
 
