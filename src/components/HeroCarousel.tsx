@@ -125,7 +125,7 @@ export const HeroCarousel = () => {
                 ))}
             </div>
 
-            <div className="absolute bottom-8 left-8 right-8 flex justify-between items-center z-20 pointer-events-auto">
+            <div className="absolute bottom-6 left-8 right-8 flex justify-between items-center z-20 pointer-events-auto">
                 <a
                     href="https://www.instagram.com/kay_design_studio/"
                     target="_blank"
