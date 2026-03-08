@@ -1,12 +1,32 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Slide image
+// Slide images
 import slide1 from "../assets/about/slide-1.png";
+import slide2 from "../assets/about/slide-2.jpg";
+import slide3 from "../assets/about/slide-3.jpg";
+import slide4 from "../assets/about/slide-4.jpg";
+import slide5 from "../assets/about/slide-5.jpg";
+import slide6 from "../assets/about/slide-6.jpg";
+import slide7 from "../assets/about/slide-7.jpg";
 import philosophyBg from "../assets/about/philosophy-bg.jpg";
 
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
+
 export const AboutSection = () => {
+    const [currentIdx, setCurrentIdx] = useState(0);
+
+    const nextSlide = useCallback(() => {
+        setCurrentIdx((prev) => (prev + 1) % slides.length);
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(nextSlide, 3500);
+        return () => clearInterval(timer);
+    }, [nextSlide]);
+
     return (
-        <section className="h-full px-8 md:px-24 bg-white overflow-hidden relative flex items-center">
+        <section className="min-h-screen px-8 md:px-24 bg-white overflow-hidden relative flex items-center py-32">
             {/* Background for Philosophy section */}
             <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none opacity-[0.03] grayscale transition-opacity duration-1000">
                 <img
@@ -16,9 +36,9 @@ export const AboutSection = () => {
                 />
             </div>
 
-            <div className="max-w-screen-2xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
-                    <div className="lg:col-span-12 mb-12">
+            <div className="max-w-screen-2xl mx-auto relative z-10 w-full">
+                <div className="flex flex-col gap-12 lg:gap-24">
+                    <div className="w-full">
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -53,10 +73,24 @@ export const AboutSection = () => {
                         </h2>
                     </div>
 
-                    <motion.div
-                        className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-24 items-stretch"
-                    >
-                        <div className="lg:col-span-5 flex flex-col justify-between space-y-8 text-base text-black/60 font-light leading-relaxed max-w-md">
+                    {/* Image Slider - Right below "To me they are one." */}
+                    <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-muted overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={currentIdx}
+                                src={slides[currentIdx]}
+                                alt={`Project ${currentIdx + 1}`}
+                                initial={{ opacity: 0, scale: 1.05 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                                className="absolute inset-0 w-full h-full object-cover brightness-90"
+                            />
+                        </AnimatePresence>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start w-full">
+                        <div className="flex flex-col space-y-8 text-base text-black/60 font-light leading-relaxed">
                             <div className="space-y-6">
                                 <p>
                                     Kay Design Studio was founded in 2002 with a unified vision, where design, build, and operate seamlessly merge into one cohesive entity.
@@ -64,35 +98,22 @@ export const AboutSection = () => {
                                 <p>
                                     With extensive expertise in interior design, construction management, and architectural woodworking, our studio has redefined standards for exceptional interiors and brand excellence.
                                 </p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col space-y-8 text-base text-black/60 font-light leading-relaxed">
+                            <div className="space-y-6">
                                 <p>
                                     Over the years, we've crafted some of the most exciting and innovative brands, while also expanding our services to become a strategic marketing partner, helping our clients target specific niche markets.
                                 </p>
                                 <p>
                                     Today, our studio remains committed to this holistic approach, offering comprehensive solutions in Design, Construction, Operations, and Unique visual design.
                                 </p>
-                            </div>
-                            <div className="pt-12 border-t border-black/5">
-                                <p className="text-sm uppercase tracking-architectural opacity-40 mb-4">Established 2002</p>
+                                <div className="pt-12 border-t border-black/5">
+                                    <p className="text-sm uppercase tracking-architectural opacity-40">Established 2002</p>
+                                </div>
                             </div>
                         </div>
-
-                        <motion.div
-                            className="lg:col-span-7 aspect-[3/4] md:aspect-[5/4] bg-muted overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
-                            initial={{ opacity: 0, scale: 1.05 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-                            viewport={{ once: true }}
-                        >
-                            <motion.img
-                                src={slide1}
-                                alt="Architectural Masterpiece"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-                                className="absolute inset-0 w-full h-full object-cover brightness-90"
-                            />
-                        </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
