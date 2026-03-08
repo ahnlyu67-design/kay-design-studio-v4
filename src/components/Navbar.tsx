@@ -32,7 +32,7 @@ export const Navbar = () => {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-8 h-20 flex items-center justify-between bg-white/70 backdrop-blur-xl text-black border-b border-black/5`}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-8 h-20 flex items-center justify-between bg-white/50 backdrop-blur-xl text-black border-b border-black/5`}
             >
                 <div className="flex items-center gap-12">
                     <div
